@@ -1,0 +1,117 @@
+# E-commerce Analysis Configuration
+# This file contains parameters for customizing the analysis
+
+# Analysis Period Configuration
+analysis:
+  # Primary year to analyze
+  current_year: 2023
+  
+  # Comparison year for YoY analysis (set to null to disable)
+  comparison_year: 2022
+  
+  # Alternative: specify date range instead of years
+  # date_range:
+  #   start_date: "2023-01-01"
+  #   end_date: "2023-12-31"
+  
+  # Months to include (1-12, null for all months)
+  months: null
+  
+  # Quarters to include (1-4, null for all quarters)
+  quarters: null
+
+# Data Configuration
+data:
+  # Directory containing CSV files
+  data_directory: "ecommerce_data"
+  
+  # Whether to include only delivered orders
+  delivered_only: true
+  
+  # Data enrichment options
+  include_product_info: true
+  include_customer_info: true
+  include_review_scores: true
+
+# Business Metrics Configuration
+metrics:
+  # Revenue metrics to calculate
+  revenue:
+    - total_revenue
+    - monthly_trends
+    - quarterly_trends
+    - yoy_growth
+    - mom_growth
+  
+  # Order metrics to calculate  
+  orders:
+    - order_count
+    - average_order_value
+    - items_per_order
+    - order_status_distribution
+  
+  # Product metrics to calculate
+  products:
+    - category_performance
+    - top_categories
+    - revenue_share
+  
+  # Geographic metrics
+  geography:
+    - state_performance
+    - top_states
+    - customer_distribution
+  
+  # Customer experience metrics
+  customer_experience:
+    - delivery_performance
+    - review_scores
+    - satisfaction_correlation
+
+# Visualization Configuration
+visualization:
+  # Color schemes for different chart types
+  colors:
+    primary: "#1f77b4"
+    secondary: "#ff7f0e" 
+    accent: "#2ca02c"
+    negative: "#d62728"
+    neutral: "#7f7f7f"
+  
+  # Chart styling
+  style:
+    figure_size: [12, 8]
+    font_size: 12
+    title_size: 16
+    dpi: 300
+  
+  # Chart types to generate
+  charts:
+    - monthly_revenue_trend
+    - product_category_bar
+    - state_revenue_choropleth
+    - review_score_distribution
+    - delivery_speed_analysis
+
+# Export Configuration  
+export:
+  # Output directory for generated files
+  output_directory: "analysis_output"
+  
+  # File formats to export
+  formats:
+    - html
+    - png
+    - csv
+  
+  # Whether to create executive summary
+  create_summary: true
+  
+  # Whether to save processed data
+  save_processed_data: true
+
+# Logging Configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  log_to_file: false
+  log_file: "analysis.log"
